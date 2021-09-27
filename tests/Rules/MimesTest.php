@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Mimes;
+use Rajifsismedika\Validation\Rules\Mimes;
 use PHPUnit\Framework\TestCase;
 
 class MimesTest extends TestCase

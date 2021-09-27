@@ -1,10 +1,10 @@
 <?php
 
-namespace Rakit\Validation\Rules;
+namespace Rajifsismedika\Validation\Rules;
 
-use Rakit\Validation\Helper;
-use Rakit\Validation\MimeTypeGuesser;
-use Rakit\Validation\Rule;
+use Rajifsismedika\Validation\Helper;
+use Rajifsismedika\Validation\MimeTypeGuesser;
+use Rajifsismedika\Validation\Rule;
 
 class Mimes extends Rule
 {

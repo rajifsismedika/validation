@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\DigitsBetween;
+use Rajifsismedika\Validation\Rules\DigitsBetween;
 use PHPUnit\Framework\TestCase;
 
 class DigitsBetweenTest extends TestCase

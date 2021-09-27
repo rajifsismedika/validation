@@ -1,18 +1,18 @@
 <?php
 
-namespace Rakit\Validation;
+namespace Rajifsismedika\Validation;
 
-use Rakit\Validation\MissingRequiredParameterException;
+use Rajifsismedika\Validation\MissingRequiredParameterException;
 
 abstract class Rule
 {
     /** @var string */
     protected $key;
 
-    /** @var \Rakit\Validation\Attribute|null */
+    /** @var \Rajifsismedika\Validation\Attribute|null */
     protected $attribute;
 
-    /** @var \Rakit\Validation\Validation|null */
+    /** @var \Rajifsismedika\Validation\Validation|null */
     protected $validation;
 
     /** @var bool */
@@ -35,7 +35,7 @@ abstract class Rule
     /**
      * Set Validation class instance
      *
-     * @param \Rakit\Validation\Validation $validation
+     * @param \Rajifsismedika\Validation\Validation $validation
      * @return void
      */
     public function setValidation(Validation $validation)
@@ -67,7 +67,7 @@ abstract class Rule
     /**
      * Set attribute
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return void
      */
     public function setAttribute(Attribute $attribute)
@@ -78,7 +78,7 @@ abstract class Rule
     /**
      * Get attribute
      *
-     * @return \Rakit\Validation\Attribute|null
+     * @return \Rajifsismedika\Validation\Attribute|null
      */
     public function getAttribute()
     {
@@ -99,7 +99,7 @@ abstract class Rule
      * Set params
      *
      * @param array $params
-     * @return \Rakit\Validation\Rule
+     * @return \Rajifsismedika\Validation\Rule
      */
     public function setParameters(array $params): Rule
     {
@@ -112,7 +112,7 @@ abstract class Rule
      *
      * @param string $key
      * @param mixed $value
-     * @return \Rakit\Validation\Rule
+     * @return \Rajifsismedika\Validation\Rule
      */
     public function setParameter(string $key, $value): Rule
     {
@@ -124,7 +124,7 @@ abstract class Rule
      * Fill $params to $this->params
      *
      * @param array $params
-     * @return \Rakit\Validation\Rule
+     * @return \Rajifsismedika\Validation\Rule
      */
     public function fillParameters(array $params): Rule
     {
@@ -184,7 +184,7 @@ abstract class Rule
      * Just alias of setMessage
      *
      * @param string $message
-     * @return \Rakit\Validation\Rule
+     * @return \Rajifsismedika\Validation\Rule
      */
     public function message(string $message): Rule
     {
@@ -195,7 +195,7 @@ abstract class Rule
      * Set message
      *
      * @param string $message
-     * @return \Rakit\Validation\Rule
+     * @return \Rajifsismedika\Validation\Rule
      */
     public function setMessage(string $message): Rule
     {
@@ -218,7 +218,7 @@ abstract class Rule
      *
      * @param array $params
      * @return void
-     * @throws \Rakit\Validation\MissingRequiredParameterException
+     * @throws \Rajifsismedika\Validation\MissingRequiredParameterException
      */
     protected function requireParameters(array $params)
     {

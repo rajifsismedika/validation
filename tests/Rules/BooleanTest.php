@@ -1,9 +1,9 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Rakit\Validation\Rules\Boolean;
+use Rajifsismedika\Validation\Rules\Boolean;
 
 class BooleanTest extends TestCase
 {

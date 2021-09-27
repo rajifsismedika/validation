@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\AlphaSpaces;
+use Rajifsismedika\Validation\Rules\AlphaSpaces;
 use PHPUnit\Framework\TestCase;
 
 class AlphaSpacesTest extends TestCase

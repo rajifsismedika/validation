@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\NotIn;
+use Rajifsismedika\Validation\Rules\NotIn;
 use PHPUnit\Framework\TestCase;
 
 class NotInTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Required;
+use Rajifsismedika\Validation\Rules\Required;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 

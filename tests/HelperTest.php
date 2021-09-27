@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Helper;
+use Rajifsismedika\Validation\Helper;
 use PHPUnit\Framework\TestCase;
 
 class HelperTest extends TestCase

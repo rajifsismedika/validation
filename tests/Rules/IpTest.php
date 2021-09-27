@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Ip;
+use Rajifsismedika\Validation\Rules\Ip;
 use PHPUnit\Framework\TestCase;
 
 class IpTest extends TestCase

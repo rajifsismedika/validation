@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Integer;
+use Rajifsismedika\Validation\Rules\Integer;
 use PHPUnit\Framework\TestCase;
 
 class IntegerTest extends TestCase

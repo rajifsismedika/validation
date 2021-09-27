@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Email;
+use Rajifsismedika\Validation\Rules\Email;
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase

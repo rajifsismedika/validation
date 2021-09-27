@@ -1,6 +1,6 @@
 <?php
 
-namespace Rakit\Validation;
+namespace Rajifsismedika\Validation;
 
 class Helper
 {

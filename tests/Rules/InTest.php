@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\In;
+use Rajifsismedika\Validation\Rules\In;
 use PHPUnit\Framework\TestCase;
 
 class InTest extends TestCase

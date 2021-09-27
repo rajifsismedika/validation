@@ -1,9 +1,9 @@
 <?php
 
-namespace Rakit\Validation\Rules;
+namespace Rajifsismedika\Validation\Rules;
 
-use Rakit\Validation\Helper;
-use Rakit\Validation\Rule;
+use Rajifsismedika\Validation\Helper;
+use Rajifsismedika\Validation\Rule;
 
 class NotIn extends Rule
 {

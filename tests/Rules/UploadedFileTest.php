@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\UploadedFile;
+use Rajifsismedika\Validation\Rules\UploadedFile;
 use PHPUnit\Framework\TestCase;
 
 class UploadedFileTest extends TestCase

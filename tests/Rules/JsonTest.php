@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Json;
+use Rajifsismedika\Validation\Rules\Json;
 use PHPUnit\Framework\TestCase;
 
 class JsonTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Accepted;
+use Rajifsismedika\Validation\Rules\Accepted;
 use PHPUnit\Framework\TestCase;
 
 class AcceptedTest extends TestCase

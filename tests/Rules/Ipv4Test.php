@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Ipv4;
+use Rajifsismedika\Validation\Rules\Ipv4;
 use PHPUnit\Framework\TestCase;
 
 class Ipv4Test extends TestCase

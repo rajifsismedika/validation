@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Regex;
+use Rajifsismedika\Validation\Rules\Regex;
 use PHPUnit\Framework\TestCase;
 
 class RegexTest extends TestCase

@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Callback;
+use Rajifsismedika\Validation\Rules\Callback;
 use PHPUnit\Framework\TestCase;
 
 class CallbackTest extends TestCase

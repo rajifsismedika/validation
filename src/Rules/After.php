@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Rules;
+namespace Rajifsismedika\Validation\Rules;
 
-use Rakit\Validation\Rule;
+use Rajifsismedika\Validation\Rule;
 
 class After extends Rule
 {

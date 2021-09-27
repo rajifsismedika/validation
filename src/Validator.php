@@ -1,6 +1,6 @@
 <?php
 
-namespace Rakit\Validation;
+namespace Rajifsismedika\Validation;
 
 class Validator
 {
@@ -34,7 +34,7 @@ class Validator
      * Register or override existing validator
      *
      * @param mixed $key
-     * @param \Rakit\Validation\Rule $rule
+     * @param \Rajifsismedika\Validation\Rule $rule
      * @return void
      */
     public function setValidator(string $key, Rule $rule)
@@ -173,7 +173,7 @@ class Validator
      * Given $ruleName and $rule to add new validator
      *
      * @param string $ruleName
-     * @param \Rakit\Validation\Rule $rule
+     * @param \Rajifsismedika\Validation\Rule $rule
      * @return void
      */
     public function addValidator(string $ruleName, Rule $rule)

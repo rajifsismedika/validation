@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Extension;
+use Rajifsismedika\Validation\Rules\Extension;
 use PHPUnit\Framework\TestCase;
 
 class ExtensionTest extends TestCase

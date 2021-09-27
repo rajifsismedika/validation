@@ -1,11 +1,11 @@
 <?php
 
-namespace Rakit\Validation;
+namespace Rajifsismedika\Validation;
 
 use Closure;
-use Rakit\Validation\Rules\Interfaces\BeforeValidate;
-use Rakit\Validation\Rules\Interfaces\ModifyValue;
-use Rakit\Validation\Rules\Required;
+use Rajifsismedika\Validation\Rules\Interfaces\BeforeValidate;
+use Rajifsismedika\Validation\Rules\Interfaces\ModifyValue;
+use Rajifsismedika\Validation\Rules\Required;
 
 class Validation
 {
@@ -38,7 +38,7 @@ class Validation
     /**
      * Constructor
      *
-     * @param \Rakit\Validation\Validator $validator
+     * @param \Rajifsismedika\Validation\Validator $validator
      * @param array $inputs
      * @param array $rules
      * @param array $messages
@@ -77,7 +77,7 @@ class Validation
      * Get attribute by key
      *
      * @param string $attributeKey
-     * @return null|\Rakit\Validation\Attribute
+     * @return null|\Rajifsismedika\Validation\Attribute
      */
     public function getAttribute(string $attributeKey)
     {
@@ -112,7 +112,7 @@ class Validation
     /**
      * Get ErrorBag instance
      *
-     * @return \Rakit\Validation\ErrorBag
+     * @return \Rajifsismedika\Validation\ErrorBag
      */
     public function errors(): ErrorBag
     {
@@ -122,7 +122,7 @@ class Validation
     /**
      * Validate attribute
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return void
      */
     protected function validateAttribute(Attribute $attribute)
@@ -179,7 +179,7 @@ class Validation
     /**
      * Check whether given $attribute is array attribute
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return bool
      */
     protected function isArrayAttribute(Attribute $attribute): bool
@@ -191,7 +191,7 @@ class Validation
     /**
      * Parse array attribute into it's child attributes
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return array
      */
     protected function parseArrayAttribute(Attribute $attribute): array
@@ -321,9 +321,9 @@ class Validation
     /**
      * Add error to the $this->errors
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @param mixed $value
-     * @param \Rakit\Validation\Rule $ruleValidator
+     * @param \Rajifsismedika\Validation\Rule $ruleValidator
      * @return void
      */
     protected function addError(Attribute $attribute, $value, Rule $ruleValidator)
@@ -349,8 +349,8 @@ class Validation
     /**
      * Check the rule is optional
      *
-     * @param \Rakit\Validation\Attribute $attribute
-     * @param \Rakit\Validation\Rule $rule
+     * @param \Rajifsismedika\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Rule $rule
      * @return bool
      */
     protected function ruleIsOptional(Attribute $attribute, Rule $rule): bool
@@ -363,7 +363,7 @@ class Validation
     /**
      * Resolve attribute name
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return string
      */
     protected function resolveAttributeName(Attribute $attribute): string
@@ -383,9 +383,9 @@ class Validation
     /**
      * Resolve message
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @param mixed $value
-     * @param \Rakit\Validation\Rule $validator
+     * @param \Rajifsismedika\Validation\Rule $validator
      * @return mixed
      */
     protected function resolveMessage(Attribute $attribute, $value, Rule $validator): string
@@ -618,7 +618,7 @@ class Validation
     /**
      * Get Validator class instance
      *
-     * @return \Rakit\Validation\Validator
+     * @return \Rajifsismedika\Validation\Validator
      */
     public function getValidator(): Validator
     {
@@ -661,7 +661,7 @@ class Validation
     /**
      * Set valid data
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @param mixed $value
      * @return void
      */
@@ -689,7 +689,7 @@ class Validation
     /**
      * Set invalid data
      *
-     * @param \Rakit\Validation\Attribute $attribute
+     * @param \Rajifsismedika\Validation\Attribute $attribute
      * @param mixed $value
      * @return void
      */

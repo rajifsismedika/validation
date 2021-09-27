@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rule;
+use Rajifsismedika\Validation\Rule;
 
 class Required extends Rule
 {

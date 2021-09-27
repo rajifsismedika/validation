@@ -1,11 +1,11 @@
 <?php
 
-namespace Rakit\Validation\Rules;
+namespace Rajifsismedika\Validation\Rules;
 
-use Rakit\Validation\Helper;
-use Rakit\Validation\MimeTypeGuesser;
-use Rakit\Validation\Rule;
-use Rakit\Validation\Rules\Interfaces\BeforeValidate;
+use Rajifsismedika\Validation\Helper;
+use Rajifsismedika\Validation\MimeTypeGuesser;
+use Rajifsismedika\Validation\Rule;
+use Rajifsismedika\Validation\Rules\Interfaces\BeforeValidate;
 
 class UploadedFile extends Rule implements BeforeValidate
 {

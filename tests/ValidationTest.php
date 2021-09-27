@@ -1,9 +1,9 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Validation;
-use Rakit\Validation\Validator;
+use Rajifsismedika\Validation\Validation;
+use Rajifsismedika\Validation\Validator;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 

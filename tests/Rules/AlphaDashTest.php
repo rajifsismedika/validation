@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\AlphaDash;
+use Rajifsismedika\Validation\Rules\AlphaDash;
 use PHPUnit\Framework\TestCase;
 
 class AlphaDashTest extends TestCase

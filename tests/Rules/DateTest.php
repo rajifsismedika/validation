@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Date;
+use Rajifsismedika\Validation\Rules\Date;
 use PHPUnit\Framework\TestCase;
 
 class DateTest extends TestCase

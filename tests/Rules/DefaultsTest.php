@@ -1,8 +1,8 @@
 <?php
 
-namespace Rakit\Validation\Tests;
+namespace Rajifsismedika\Validation\Tests;
 
-use Rakit\Validation\Rules\Defaults;
+use Rajifsismedika\Validation\Rules\Defaults;
 use PHPUnit\Framework\TestCase;
 
 class DefaultsTest extends TestCase
