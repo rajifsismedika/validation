@@ -24,7 +24,7 @@ class Date extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters($this->fillableParams);
 

@@ -10,7 +10,7 @@ trait SizeTrait
     /**
      * Get size (int) value from given $value
      *
-     * @param int|string $value
+     * @param int|$value
      * @return float|false
      */
     protected function getValueSize($value)
@@ -91,7 +91,7 @@ trait SizeTrait
      * @param mixed $value
      * @return bool
      */
-    public function isUploadedFileValue($value): bool
+    public function isUploadedFileValue($value)
     {
         if (!is_array($value)) {
             return false;

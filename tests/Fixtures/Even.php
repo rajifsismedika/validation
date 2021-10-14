@@ -9,7 +9,7 @@ class Even extends Rule
 
     protected $message = "The :attribute must be even";
 
-    public function check($value): bool
+    public function check($value)
     {
         if (! is_numeric($value)) {
             return false;

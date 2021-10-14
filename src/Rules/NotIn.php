@@ -17,10 +17,10 @@ class NotIn extends Rule
     /**
      * Given $params and assign the $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         if (count($params) == 1 and is_array($params[0])) {
             $params = $params[0];
@@ -32,7 +32,7 @@ class NotIn extends Rule
     /**
      * Set strict value
      *
-     * @param bool $strict
+     * @param $strict
      * @return void
      */
     public function strict($strict = true)
@@ -46,7 +46,7 @@ class NotIn extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters(['disallowed_values']);
 

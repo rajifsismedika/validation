@@ -40,9 +40,9 @@ class Attribute
      */
     public function __construct(
         Validation $validation,
-        string $key,
+        $key,
         $alias = null,
-        array $rules = []
+        $rules = []
     ) {
         $this->validation = $validation;
         $this->alias = $alias;
@@ -66,10 +66,10 @@ class Attribute
     /**
      * Set key indexes
      *
-     * @param array $keyIndexes
+     * @param $keyIndexes
      * @return void
      */
-    public function setKeyIndexes(array $keyIndexes)
+    public function setKeyIndexes($keyIndexes)
     {
         $this->keyIndexes = $keyIndexes;
     }
@@ -87,10 +87,10 @@ class Attribute
     /**
      * Set other attributes
      *
-     * @param array $otherAttributes
+     * @param $otherAttributes
      * @return void
      */
-    public function setOtherAttributes(array $otherAttributes)
+    public function setOtherAttributes($otherAttributes)
     {
         $this->otherAttributes = [];
         foreach ($otherAttributes as $otherAttribute) {
@@ -114,7 +114,7 @@ class Attribute
      *
      * @return array
      */
-    public function getOtherAttributes(): array
+    public function getOtherAttributes()
     {
         return $this->otherAttributes;
     }
@@ -135,10 +135,10 @@ class Attribute
     /**
      * Get rule
      *
-     * @param string $ruleKey
+     * @param $ruleKey
      * @return void
      */
-    public function getRule(string $ruleKey)
+    public function getRule($ruleKey)
     {
         return $this->hasRule($ruleKey)? $this->rules[$ruleKey] : null;
     }
@@ -148,7 +148,7 @@ class Attribute
      *
      * @return array
      */
-    public function getRules(): array
+    public function getRules()
     {
         return $this->rules;
     }
@@ -156,10 +156,10 @@ class Attribute
     /**
      * Check the $ruleKey has in the rule
      *
-     * @param string $ruleKey
+     * @param $ruleKey
      * @return bool
      */
-    public function hasRule(string $ruleKey): bool
+    public function hasRule($ruleKey)
     {
         return isset($this->rules[$ruleKey]);
     }
@@ -170,7 +170,7 @@ class Attribute
      * @param boolean $required
      * @return void
      */
-    public function setRequired(bool $required)
+    public function setRequired($required)
     {
         $this->required = $required;
     }
@@ -180,7 +180,7 @@ class Attribute
      *
      * @return boolean
      */
-    public function isRequired(): bool
+    public function isRequired()
     {
         return $this->required;
     }
@@ -190,7 +190,7 @@ class Attribute
      *
      * @return string
      */
-    public function getKey(): string
+    public function getKey()
     {
         return $this->key;
     }
@@ -200,7 +200,7 @@ class Attribute
      *
      * @return array
      */
-    public function getKeyIndexes(): array
+    public function getKeyIndexes()
     {
         return $this->keyIndexes;
     }
@@ -211,7 +211,7 @@ class Attribute
      * @param string|null $key
      * @return mixed
      */
-    public function getValue(string $key = null)
+    public function getValue($key = null)
     {
         if ($key && $this->isArrayAttribute()) {
             $key = $this->resolveSiblingKey($key);
@@ -229,7 +229,7 @@ class Attribute
      *
      * @return boolean
      */
-    public function isArrayAttribute(): bool
+    public function isArrayAttribute()
     {
         return count($this->getKeyIndexes()) > 0;
     }
@@ -239,7 +239,7 @@ class Attribute
      *
      * @return boolean
      */
-    public function isUsingDotNotation(): bool
+    public function isUsingDotNotation()
     {
         return strpos($this->getKey(), '.') !== false;
     }
@@ -247,10 +247,10 @@ class Attribute
     /**
      * Resolve sibling key
      *
-     * @param string $key
+     * @param $key
      * @return string
      */
-    public function resolveSiblingKey(string $key): string
+    public function resolveSiblingKey($key)
     {
         $indexes = $this->getKeyIndexes();
         $keys = explode("*", $key);
@@ -289,10 +289,10 @@ class Attribute
     /**
      * Set alias
      *
-     * @param string $alias
+     * @param $alias
      * @return void
      */
-    public function setAlias(string $alias)
+    public function setAlias($alias)
     {
         $this->alias = $alias;
     }

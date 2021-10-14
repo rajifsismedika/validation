@@ -14,7 +14,7 @@ trait FileTrait
      * @param mixed $value
      * @return bool
      */
-    public function isValueFromUploadedFiles($value): bool
+    public function isValueFromUploadedFiles($value)
     {
         if (!is_array($value)) {
             return false;
@@ -36,7 +36,7 @@ trait FileTrait
      * @param mixed $value
      * @return bool
      */
-    public function isUploadedFile($value): bool
+    public function isUploadedFile($value)
     {
         return $this->isValueFromUploadedFiles($value) && is_uploaded_file($value['tmp_name']);
     }

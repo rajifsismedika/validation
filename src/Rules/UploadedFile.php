@@ -26,10 +26,10 @@ class UploadedFile extends Rule implements BeforeValidate
     /**
      * Given $params and assign $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         $this->minSize(array_shift($params));
         $this->maxSize(array_shift($params));
@@ -44,7 +44,7 @@ class UploadedFile extends Rule implements BeforeValidate
      * @param string|int $size
      * @return self
      */
-    public function maxSize($size): Rule
+    public function maxSize($size)
     {
         $this->params['max_size'] = $size;
         return $this;
@@ -56,7 +56,7 @@ class UploadedFile extends Rule implements BeforeValidate
      * @param string|int $size
      * @return self
      */
-    public function minSize($size): Rule
+    public function minSize($size)
     {
         $this->params['min_size'] = $size;
         return $this;
@@ -69,7 +69,7 @@ class UploadedFile extends Rule implements BeforeValidate
      * @param string|int $max
      * @return self
      */
-    public function sizeBetween($min, $max): Rule
+    public function sizeBetween($min, $max)
     {
         $this->minSize($min);
         $this->maxSize($max);
@@ -83,7 +83,7 @@ class UploadedFile extends Rule implements BeforeValidate
      * @param mixed $types
      * @return self
      */
-    public function fileTypes($types): Rule
+    public function fileTypes($types)
     {
         if (is_string($types)) {
             $types = explode('|', $types);
@@ -127,7 +127,7 @@ class UploadedFile extends Rule implements BeforeValidate
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $minSize = $this->parameter('min_size');
         $maxSize = $this->parameter('max_size');

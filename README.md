@@ -312,7 +312,7 @@ $errors = $validation->errors(); // << ErrorBag
 
 Now you can use methods below to retrieves errors messages:
 
-#### `all(string $format = ':message')`
+#### `all($format = ':message')`
 
 Get all messages as flatten array.
 
@@ -334,7 +334,7 @@ $messages = $errors->all('<li>:message</li>');
 // ]
 ```
 
-#### `firstOfAll(string $format = ':message', bool $dotNotation = false)`
+#### `firstOfAll($format = ':message', $dotNotation = false)`
 
 Get only first message from all existing keys.
 
@@ -377,7 +377,7 @@ $messages = $errors->firstOfAll(':message', true);
 // ]
 ```
 
-#### `first(string $key)`
+#### `first($key)`
 
 Get first message from given key. It will return `string` if key has any error message, or `null` if key has no errors.
 
@@ -412,7 +412,7 @@ $messages = $errors->toArray();
 
 Get count messages.
 
-#### `has(string $key)`
+#### `has($key)`
 
 Check if given key has an error. It returns `bool` if a key has an error, and otherwise.
 
@@ -975,7 +975,7 @@ class UniqueRule extends Rule
         $this->pdo = $pdo;
     }
 
-    public function check($value): bool
+    public function check($value)
     {
         // make sure required parameters exists
         $this->requireParameters(['table', 'column']);
@@ -1029,7 +1029,7 @@ $params['except'] = 'exception@mail.com';
 ```
 
 > If you want your custom rule accept parameter list like `in`,`not_in`, or `uploaded_file` rules,
-  you just need to override `fillParameters(array $params)` method in your custom rule class.
+  you just need to override `fillParameters($params)` method in your custom rule class.
 
 Note that `unique` rule that we created above also can be used like this:
 

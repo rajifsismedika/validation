@@ -7,7 +7,7 @@ class Validator
     use Traits\TranslationsTrait, Traits\MessagesTrait;
 
     /** @var array */
-    protected $translations = [];
+    // protected $translations = [];
 
     /** @var array */
     protected $validators = [];
@@ -21,10 +21,10 @@ class Validator
     /**
      * Constructor
      *
-     * @param array $messages
+     * @param $messages
      * @return void
      */
-    public function __construct(array $messages = [])
+    public function __construct($messages = [])
     {
         $this->messages = $messages;
         $this->registerBaseValidators();
@@ -37,7 +37,7 @@ class Validator
      * @param \Rajifsismedika\Validation\Rule $rule
      * @return void
      */
-    public function setValidator(string $key, Rule $rule)
+    public function setValidator($key, Rule $rule)
     {
         $this->validators[$key] = $rule;
         $rule->setKey($key);
@@ -57,12 +57,12 @@ class Validator
     /**
      * Validate $inputs
      *
-     * @param array $inputs
-     * @param array $rules
-     * @param array $messages
+     * @param $inputs
+     * @param $rules
+     * @param $messages
      * @return Validation
      */
-    public function validate(array $inputs, array $rules, array $messages = []): Validation
+    public function validate($inputs, $rules, $messages = [])
     {
         $validation = $this->make($inputs, $rules, $messages);
         $validation->validate();
@@ -72,12 +72,12 @@ class Validator
     /**
      * Given $inputs, $rules and $messages to make the Validation class instance
      *
-     * @param array $inputs
-     * @param array $rules
-     * @param array $messages
+     * @param $inputs
+     * @param $rules
+     * @param $messages
      * @return Validation
      */
-    public function make(array $inputs, array $rules, array $messages = []): Validation
+    public function make($inputs, $rules, $messages = [])
     {
         $messages = array_merge($this->messages, $messages);
         $validation = new Validation($this, $inputs, $rules, $messages);
@@ -89,11 +89,11 @@ class Validator
     /**
      * Magic invoke method to make Rule instance
      *
-     * @param string $rule
+     * @param $rule
      * @return Rule
      * @throws RuleNotFoundException
      */
-    public function __invoke(string $rule): Rule
+    public function __invoke($rule)
     {
         $args = func_get_args();
         $rule = array_shift($args);
@@ -172,11 +172,11 @@ class Validator
     /**
      * Given $ruleName and $rule to add new validator
      *
-     * @param string $ruleName
+     * @param $ruleName
      * @param \Rajifsismedika\Validation\Rule $rule
      * @return void
      */
-    public function addValidator(string $ruleName, Rule $rule)
+    public function addValidator($ruleName, Rule $rule)
     {
         if (!$this->allowRuleOverride && array_key_exists($ruleName, $this->validators)) {
             throw new RuleQuashException(
@@ -193,7 +193,7 @@ class Validator
      * @param boolean $status
      * @return void
      */
-    public function allowRuleOverride(bool $status = false)
+    public function allowRuleOverride($status = false)
     {
         $this->allowRuleOverride = $status;
     }
@@ -204,7 +204,7 @@ class Validator
      * @param boolean $useHumanizedKeys
      * @return void
      */
-    public function setUseHumanizedKeys(bool $useHumanizedKeys = true)
+    public function setUseHumanizedKeys($useHumanizedKeys = true)
     {
         $this->useHumanizedKeys = $useHumanizedKeys;
     }
@@ -214,7 +214,7 @@ class Validator
      *
      * @return void
      */
-    public function isUsingHumanizedKey(): bool
+    public function isUsingHumanizedKey()
     {
         return $this->useHumanizedKeys;
     }

@@ -39,16 +39,16 @@ class Validation
      * Constructor
      *
      * @param \Rajifsismedika\Validation\Validator $validator
-     * @param array $inputs
-     * @param array $rules
-     * @param array $messages
+     * @param $inputs
+     * @param $rules
+     * @param $messages
      * @return void
      */
     public function __construct(
         Validator $validator,
-        array $inputs,
-        array $rules,
-        array $messages = []
+        $inputs,
+        $rules,
+        $messages = []
     ) {
         $this->validator = $validator;
         $this->inputs = $this->resolveInputAttributes($inputs);
@@ -62,11 +62,11 @@ class Validation
     /**
      * Add attribute rules
      *
-     * @param string $attributeKey
-     * @param string|array $rules
+     * @param $attributeKey
+     * @param string|$rules
      * @return void
      */
-    public function addAttribute(string $attributeKey, $rules)
+    public function addAttribute($attributeKey, $rules)
     {
         $resolvedRules = $this->resolveRules($rules);
         $attribute = new Attribute($this, $attributeKey, $this->getAlias($attributeKey), $resolvedRules);
@@ -76,10 +76,10 @@ class Validation
     /**
      * Get attribute by key
      *
-     * @param string $attributeKey
+     * @param $attributeKey
      * @return null|\Rajifsismedika\Validation\Attribute
      */
-    public function getAttribute(string $attributeKey)
+    public function getAttribute($attributeKey)
     {
         return isset($this->attributes[$attributeKey])? $this->attributes[$attributeKey] : null;
     }
@@ -87,10 +87,10 @@ class Validation
     /**
      * Run validation
      *
-     * @param array $inputs
+     * @param $inputs
      * @return void
      */
-    public function validate(array $inputs = [])
+    public function validate($inputs = [])
     {
         $this->errors = new ErrorBag; // reset error bag
         $this->inputs = array_merge($this->inputs, $this->resolveInputAttributes($inputs));
@@ -114,7 +114,7 @@ class Validation
      *
      * @return \Rajifsismedika\Validation\ErrorBag
      */
-    public function errors(): ErrorBag
+    public function errors()
     {
         return $this->errors;
     }
@@ -182,7 +182,7 @@ class Validation
      * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return bool
      */
-    protected function isArrayAttribute(Attribute $attribute): bool
+    protected function isArrayAttribute(Attribute $attribute)
     {
         $key = $attribute->getKey();
         return strpos($key, '*') !== false;
@@ -194,7 +194,7 @@ class Validation
      * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return array
      */
-    protected function parseArrayAttribute(Attribute $attribute): array
+    protected function parseArrayAttribute(Attribute $attribute)
     {
         $attributeKey = $attribute->getKey();
         $data = Helper::arrayDot($this->initializeAttributeOnData($attributeKey));
@@ -234,7 +234,7 @@ class Validation
      * @param  string  $attribute
      * @return array
      */
-    protected function initializeAttributeOnData(string $attributeKey): array
+    protected function initializeAttributeOnData($attributeKey)
     {
         $explicitPath = $this->getLeadingExplicitAttributePath($attributeKey);
 
@@ -257,7 +257,7 @@ class Validation
      * @param  string  $attributeKey
      * @return array
      */
-    public function extractValuesForWildcards(array $data, string $attributeKey): array
+    public function extractValuesForWildcards($data, $attributeKey)
     {
         $keys = [];
 
@@ -291,7 +291,7 @@ class Validation
      * @param  string  $attributeKey
      * @return string|null null when root wildcard
      */
-    protected function getLeadingExplicitAttributePath(string $attributeKey)
+    protected function getLeadingExplicitAttributePath($attributeKey)
     {
         return rtrim(explode('*', $attributeKey)[0], '.') ?: null;
     }
@@ -305,7 +305,7 @@ class Validation
      * @param  string|null $attributeKey
      * @return array
      */
-    protected function extractDataFromPath($attributeKey): array
+    protected function extractDataFromPath($attributeKey)
     {
         $results = [];
 
@@ -340,7 +340,7 @@ class Validation
      * @param mixed $value
      * @return boolean
      */
-    protected function isEmptyValue($value): bool
+    protected function isEmptyValue($value)
     {
         $requiredValidator = new Required;
         return false === $requiredValidator->check($value, []);
@@ -353,7 +353,7 @@ class Validation
      * @param \Rajifsismedika\Validation\Rule $rule
      * @return bool
      */
-    protected function ruleIsOptional(Attribute $attribute, Rule $rule): bool
+    protected function ruleIsOptional(Attribute $attribute, Rule $rule)
     {
         return false === $attribute->isRequired() and
             false === $rule->isImplicit() and
@@ -366,7 +366,7 @@ class Validation
      * @param \Rajifsismedika\Validation\Attribute $attribute
      * @return string
      */
-    protected function resolveAttributeName(Attribute $attribute): string
+    protected function resolveAttributeName(Attribute $attribute)
     {
         $primaryAttribute = $attribute->getPrimaryAttribute();
         if (isset($this->aliases[$attribute->getKey()])) {
@@ -388,7 +388,7 @@ class Validation
      * @param \Rajifsismedika\Validation\Rule $validator
      * @return mixed
      */
-    protected function resolveMessage(Attribute $attribute, $value, Rule $validator): string
+    protected function resolveMessage(Attribute $attribute, $value, Rule $validator)
     {
         $primaryAttribute = $attribute->getPrimaryAttribute();
         $params = array_merge($validator->getParameters(), $validator->getParametersTexts());
@@ -457,7 +457,7 @@ class Validation
      * @param mixed $value
      * @return string
      */
-    protected function stringify($value): string
+    protected function stringify($value)
     {
         if (is_string($value) || is_numeric($value)) {
             return $value;
@@ -474,7 +474,7 @@ class Validation
      * @param mixed $rules
      * @return array
      */
-    protected function resolveRules($rules): array
+    protected function resolveRules($rules)
     {
         if (is_string($rules)) {
             $rules = explode('|', $rules);
@@ -511,10 +511,10 @@ class Validation
     /**
      * Parse $rule
      *
-     * @param string $rule
+     * @param $rule
      * @return array
      */
-    protected function parseRule(string $rule): array
+    protected function parseRule($rule)
     {
         $exp = explode(':', $rule, 2);
         $rulename = $exp[0];
@@ -534,7 +534,7 @@ class Validation
      * @param mixed $alias
      * @return void
      */
-    public function setAlias(string $attributeKey, string $alias)
+    public function setAlias($attributeKey, $alias)
     {
         $this->aliases[$attributeKey] = $alias;
     }
@@ -545,7 +545,7 @@ class Validation
      * @param mixed $attributeKey
      * @return string|null
      */
-    public function getAlias(string $attributeKey)
+    public function getAlias($attributeKey)
     {
         return isset($this->aliases[$attributeKey])? $this->aliases[$attributeKey] : null;
     }
@@ -553,10 +553,10 @@ class Validation
     /**
      * Set attributes aliases
      *
-     * @param array $aliases
+     * @param $aliases
      * @return void
      */
-    public function setAliases(array $aliases)
+    public function setAliases($aliases)
     {
         $this->aliases = array_merge($this->aliases, $aliases);
     }
@@ -566,7 +566,7 @@ class Validation
      *
      * @return bool
      */
-    public function passes(): bool
+    public function passes()
     {
         return $this->errors->count() == 0;
     }
@@ -576,7 +576,7 @@ class Validation
      *
      * @return bool
      */
-    public function fails(): bool
+    public function fails()
     {
         return !$this->passes();
     }
@@ -584,10 +584,10 @@ class Validation
     /**
      * Given $key and get value
      *
-     * @param string $key
+     * @param $key
      * @return mixed
      */
-    public function getValue(string $key)
+    public function getValue($key)
     {
         return Helper::arrayGet($this->inputs, $key);
     }
@@ -595,11 +595,11 @@ class Validation
     /**
      * Set input value
      *
-     * @param string $key
+     * @param $key
      * @param mixed $value
      * @return void
      */
-    public function setValue(string $key, $value)
+    public function setValue($key, $value)
     {
         Helper::arraySet($this->inputs, $key, $value);
     }
@@ -607,10 +607,10 @@ class Validation
     /**
      * Given $key and check value is exsited
      *
-     * @param string $key
+     * @param $key
      * @return boolean
      */
-    public function hasValue(string $key): bool
+    public function hasValue($key)
     {
         return Helper::arrayHas($this->inputs, $key);
     }
@@ -620,7 +620,7 @@ class Validation
      *
      * @return \Rajifsismedika\Validation\Validator
      */
-    public function getValidator(): Validator
+    public function getValidator()
     {
         return $this->validator;
     }
@@ -628,10 +628,10 @@ class Validation
     /**
      * Given $inputs and resolve input attributes
      *
-     * @param array $inputs
+     * @param $inputs
      * @return array
      */
-    protected function resolveInputAttributes(array $inputs): array
+    protected function resolveInputAttributes($inputs)
     {
         $resolvedInputs = [];
         foreach ($inputs as $key => $rules) {
@@ -653,7 +653,7 @@ class Validation
      *
      * @return array
      */
-    public function getValidatedData(): array
+    public function getValidatedData()
     {
         return array_merge($this->validData, $this->invalidData);
     }
@@ -681,7 +681,7 @@ class Validation
      *
      * @return array
      */
-    public function getValidData(): array
+    public function getValidData()
     {
         return $this->validData;
     }
@@ -709,7 +709,7 @@ class Validation
      *
      * @return void
      */
-    public function getInvalidData(): array
+    public function getInvalidData()
     {
         return $this->invalidData;
     }

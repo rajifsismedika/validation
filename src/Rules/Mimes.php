@@ -25,10 +25,10 @@ class Mimes extends Rule
     /**
      * Given $params and assign $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         $this->allowTypes($params);
         return $this;
@@ -40,7 +40,7 @@ class Mimes extends Rule
      * @param mixed $types
      * @return self
      */
-    public function allowTypes($types): Rule
+    public function allowTypes($types)
     {
         if (is_string($types)) {
             $types = explode('|', $types);
@@ -57,7 +57,7 @@ class Mimes extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $allowedTypes = $this->parameter('allowed_types');
 

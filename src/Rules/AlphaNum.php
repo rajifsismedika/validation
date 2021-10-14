@@ -16,7 +16,7 @@ class AlphaNum extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         if (! is_string($value) && ! is_numeric($value)) {
             return false;

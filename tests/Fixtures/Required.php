@@ -7,7 +7,7 @@ use Rajifsismedika\Validation\Rule;
 class Required extends Rule
 {
 
-    public function check($value): bool
+    public function check($value)
     {
         return true;
     }

@@ -17,10 +17,10 @@ class In extends Rule
     /**
      * Given $params and assign the $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         if (count($params) == 1 && is_array($params[0])) {
             $params = $params[0];
@@ -32,10 +32,10 @@ class In extends Rule
     /**
      * Set strict value
      *
-     * @param bool $strict
+     * @param $strict
      * @return void
      */
-    public function strict(bool $strict = true)
+    public function strict($strict = true)
     {
         $this->strict = $strict;
     }
@@ -46,7 +46,7 @@ class In extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters(['allowed_values']);
 

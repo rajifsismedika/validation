@@ -16,7 +16,7 @@ class AlphaSpaces extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         if (! is_string($value)) {
             return false;

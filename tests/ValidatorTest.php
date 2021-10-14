@@ -853,7 +853,7 @@ class ValidatorTest extends TestCase
         }
     }
 
-    public function rootAsteriskProvider(): array
+    public function rootAsteriskProvider()
     {
         return [
             'control sample success' => [

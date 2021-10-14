@@ -9,11 +9,11 @@ class Helper
      * Determine if a given string matches a given pattern.
      * Adapted from: https://github.com/illuminate/support/blob/v5.3.23/Str.php#L119
      *
-     * @param  string $pattern
-     * @param  string $value
+     * @param  $pattern
+     * @param  $value
      * @return bool
      */
-    public static function strIs(string $pattern, string $value): bool
+    public static function strIs($pattern, $value)
     {
         if ($pattern == $value) {
             return true;
@@ -33,11 +33,11 @@ class Helper
      * Check if an item or items exist in an array using "dot" notation.
      * Adapted from: https://github.com/illuminate/support/blob/v5.3.23/Arr.php#L81
      *
-     * @param  array $array
-     * @param  string $key
+     * @param  $array
+     * @param  $key
      * @return bool
      */
-    public static function arrayHas(array $array, string $key): bool
+    public static function arrayHas($array, $key)
     {
         if (array_key_exists($key, $array)) {
             return true;
@@ -63,7 +63,7 @@ class Helper
      * @param  mixed       $default
      * @return mixed
      */
-    public static function arrayGet(array $array, $key, $default = null)
+    public static function arrayGet($array, $key, $default = null)
     {
         if (is_null($key)) {
             return $array;
@@ -89,10 +89,10 @@ class Helper
      * Adapted from: https://github.com/illuminate/support/blob/v5.3.23/Arr.php#L81
      *
      * @param  array  $array
-     * @param  string $prepend
+     * @param  $prepend
      * @return array
      */
-    public static function arrayDot(array $array, string $prepend = ''): array
+    public static function arrayDot($array, $prepend = '')
     {
         $results = [];
 
@@ -117,7 +117,7 @@ class Helper
      * @param bool              $overwrite
      * @return mixed
      */
-    public static function arraySet(&$target, $key, $value, $overwrite = true): array
+    public static function arraySet(&$target, $key, $value, $overwrite = true)
     {
         if (is_null($key)) {
             if ($overwrite) {
@@ -169,7 +169,7 @@ class Helper
      * Unset an item on an array or object using dot notation.
      *
      * @param  mixed        $target
-     * @param  string|array $key
+     * @param  string|$key
      * @return mixed
      */
     public static function arrayUnset(&$target, $key)
@@ -197,11 +197,11 @@ class Helper
     /**
      * Get snake_case format from given string
      *
-     * @param  string $value
-     * @param  string $delimiter
+     * @param  $value
+     * @param  $delimiter
      * @return string
      */
-    public static function snakeCase(string $value, string $delimiter = '_'): string
+    public static function snakeCase($value, $delimiter = '_')
     {
         if (! ctype_lower($value)) {
             $value = preg_replace('/\s+/u', '', ucwords($value));
@@ -219,7 +219,7 @@ class Helper
      * @param  string|null  $lastSeparator
      * @return string
      */
-    public static function join(array $pieces, string $separator, string $lastSeparator = null): string
+    public static function join($pieces, $separator, $lastSeparator = null)
     {
         if (is_null($lastSeparator)) {
             $lastSeparator = $separator;
@@ -245,7 +245,7 @@ class Helper
      * @param  string|null  $suffix
      * @return array
      */
-    public static function wraps(array $strings, string $prefix, string $suffix = null): array
+    public static function wraps($strings, $prefix, $suffix = null)
     {
         if (is_null($suffix)) {
             $suffix = $prefix;

@@ -20,7 +20,7 @@ class Defaults extends Rule implements ModifyValue
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters($this->fillableParams);
 
@@ -42,7 +42,7 @@ class Defaults extends Rule implements ModifyValue
      * @param mixed $value
      * @return boolean
      */
-    protected function isEmptyValue($value): bool
+    protected function isEmptyValue($value)
     {
         $requiredValidator = new Required;
         return false === $requiredValidator->check($value, []);

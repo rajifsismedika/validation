@@ -13,10 +13,10 @@ class Url extends Rule
     /**
      * Given $params and assign $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         if (count($params) == 1 and is_array($params[0])) {
             $params = $params[0];
@@ -27,10 +27,10 @@ class Url extends Rule
     /**
      * Given $schemes and assign $this->params
      *
-     * @param array $schemes
+     * @param $schemes
      * @return self
      */
-    public function forScheme($schemes): Rule
+    public function forScheme($schemes)
     {
         $this->params['schemes'] = (array) $schemes;
         return $this;
@@ -42,7 +42,7 @@ class Url extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $schemes = $this->parameter('schemes');
 
@@ -70,7 +70,7 @@ class Url extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function validateBasic($value): bool
+    public function validateBasic($value)
     {
         return filter_var($value, FILTER_VALIDATE_URL) !== false;
     }
@@ -82,7 +82,7 @@ class Url extends Rule
      * @param null $scheme
      * @return bool
      */
-    public function validateCommonScheme($value, $scheme = null): bool
+    public function validateCommonScheme($value, $scheme = null)
     {
         if (!$scheme) {
             return $this->validateBasic($value) && (bool) preg_match("/^\w+:\/\//i", $value);
@@ -97,7 +97,7 @@ class Url extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function validateMailtoScheme($value): bool
+    public function validateMailtoScheme($value)
     {
         return $this->validateBasic($value) && preg_match("/^mailto:/", $value);
     }
@@ -108,7 +108,7 @@ class Url extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function validateJdbcScheme($value): bool
+    public function validateJdbcScheme($value)
     {
         return (bool) preg_match("/^jdbc:\w+:\/\//", $value);
     }

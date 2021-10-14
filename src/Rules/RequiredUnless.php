@@ -15,10 +15,10 @@ class RequiredUnless extends Required
     /**
      * Given $params and assign the $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         $this->params['field'] = array_shift($params);
         $this->params['values'] = $params;
@@ -31,7 +31,7 @@ class RequiredUnless extends Required
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters(['field', 'values']);
 

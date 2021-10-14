@@ -782,10 +782,10 @@ class MimeTypeGuesser
     /**
      * Get extension by mime type
      *
-     * @param string $mimeType
+     * @param $mimeType
      * @return string|null
      */
-    public function getExtension(string $mimeType)
+    public function getExtension($mimeType)
     {
         return isset($this->mimeTypes[$mimeType])? $this->mimeTypes[$mimeType] : null;
     }
@@ -793,10 +793,10 @@ class MimeTypeGuesser
     /**
      * Get mime type by extension
      *
-     * @param string $extension
+     * @param $extension
      * @return string|null
      */
-    public function getMimeType(string $extension)
+    public function getMimeType($extension)
     {
         $key = array_search($extension, $this->mimeTypes);
         return $key ?: null;

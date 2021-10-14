@@ -18,7 +18,7 @@ class Accepted extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $acceptables = ['yes', 'on', '1', 1, true, 'true'];
         return in_array($value, $acceptables, true);

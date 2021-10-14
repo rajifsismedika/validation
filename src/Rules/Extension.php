@@ -14,10 +14,10 @@ class Extension extends Rule
      /**
      * Given $params and assign the $this->params
      *
-     * @param array $params
+     * @param $params
      * @return self
      */
-    public function fillParameters(array $params): Rule
+    public function fillParameters($params)
     {
         if (count($params) == 1 && is_array($params[0])) {
             $params = $params[0];
@@ -32,7 +32,7 @@ class Extension extends Rule
      * @param mixed $value
      * @return bool
      */
-    public function check($value): bool
+    public function check($value)
     {
         $this->requireParameters(['allowed_extensions']);
         $allowedExtensions = $this->parameter('allowed_extensions');
